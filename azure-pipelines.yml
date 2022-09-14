@@ -8,7 +8,7 @@ trigger:
 - main
 
 variables:
-- group: <enter variable group name>
+- group: VaribalesForPipeline
 
 pool:
   vmImage: ubuntu-latest
@@ -16,7 +16,7 @@ pool:
 steps:
 - task: Docker@2
   inputs:
-    containerRegistry: '<enter service connection name>'
+    containerRegistry: 'dockerhubsvcconn'
     repository: '$(repo)'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
